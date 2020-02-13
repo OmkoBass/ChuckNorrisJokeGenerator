@@ -3,14 +3,14 @@ import axios from 'axios'
 
 export default class Joke extends Component {
     state = {
-        punchLine : []
+        punchLines : []
     }
     
     componentDidMount(){
         axios.get('https://api.chucknorris.io/jokes/random')
         .then(res => {
-            let punchLine = res.data.value;
-            this.setState({punchLine});
+            const punchLine = res.data.value;
+            this.setState({ punchLine });
         })
     }
 
